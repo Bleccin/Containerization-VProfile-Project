@@ -48,7 +48,13 @@ SETTING UP DOCKERFILES:
 5. I will use the official Docker image for Memcached and Rabbitmq because there is no extra configuration necessary.
 
 WRITE DOCKER COMPOSE TO BUILD AND TEST THE IMAGES:
-1. I built a docker-compose.yml file to build all the necessary images.  
+1. I built a docker-compose.yml file to build all the necessary images.
+2. I placed the Dockerfiles and the Docker compose file in the same folder and ran the below command:
+    - docker compose build
+3. After the images ran I checked to verify by using the below command.
+   - docker images
+4. I ran the docker compose using:
+   - docker compose up -d 
 
 
 
