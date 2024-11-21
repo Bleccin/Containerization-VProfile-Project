@@ -1,0 +1,48 @@
+1. Write the Dockerfiles but before writing Dockerfiles I need to know the services, tools and software used in the Application and their version.
+2. Below are the current Applications and their versions:
+    i.  MySQL (Database SVC) => 8.0.33
+    ii. Memcache (DB Caching SVC) => 1.6
+    iii.RabbitMQ (Broker/Queue SVC) => 4.0
+    iv. Tomcat (Application SVC) => 10, JDK 21
+    v. JDK (Used for Artifact built on Tomcat) => JDK 21
+    vi. Maven (Used for Artifact built on Tomcat) => Maven 3.9.9
+    vii. Nginx(Web SVC) => 1.27
+3. I scanned through DockerHub to find the images for the Applications and their tags. Below are the images with their tags.
+     i. mysql:8.0.33
+     ii. memcache:1.6
+     iii. rabbitmq:4.0-alpine
+     iv. maven:3.9.9-eclipse-temurin-21-jammy
+     v. tomcat:10-jdk21
+     vi. nginx: latest
+
+SETTING UP VM AND ADDING DOCKER TO IT:
+1. I brought up a new Ubuntu VM that I want to use for this project and ssh int it.
+2. I set up Docker's apt repository using below prompts:
+    # Add Docker's official GPG key:
+       - sudo apt-get update
+       - sudo apt-get install ca-certificates curl
+       - sudo install -m 0755 -d /etc/apt/keyrings
+       - sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+       - sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+  # Add the repository to Apt sources:
+    - echo \
+     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+   - sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   - sudo apt-get update
+3. I installed Docker using below prompt:
+    - sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+4. I checked that the docker is running using below prompt:
+   - systemctl status docker
+5. I added the vagrant user to the docker group so that they can execute docker commands without using sudo.
+   - usermod -aG docker vagrant
+6. I logged out and ssh in again for the permissions to be loaded.
+
+SETTING UP DOCKER:
+1. I setup 3 public repositories on Dockerhub to host the images I will be creating.
+    bleccin/vprofileweb; bleccin/vprofiledb; bleccin/vprofileapp
+2. I opened up VScode to build a multi-staged Dockerfile for Maven and Tomcat and this will be the App Image Dockerfile.
+
+
+
