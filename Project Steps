@@ -9,8 +9,8 @@
     vii. Nginx(Web SVC) => 1.27
 3. I scanned through DockerHub to find the images for the Applications and their tags. Below are the images with their tags.
      i. mysql:8.0.33
-     ii. memcache:1.6
-     iii. rabbitmq:4.0-alpine
+     ii.memcache:1.6
+     iii.rabbitmq:4.0-alpine
      iv. maven:3.9.9-eclipse-temurin-21-jammy
      v. tomcat:10-jdk21
      vi. nginx: latest
@@ -39,10 +39,11 @@ SETTING UP VM AND ADDING DOCKER TO IT:
    - usermod -aG docker vagrant
 6. I logged out and ssh in again for the permissions to be loaded.
 
-SETTING UP DOCKER:
+SETTING UP DOCKERFILES:
 1. I setup 3 public repositories on Dockerhub to host the images I will be creating.
     bleccin/vprofileweb; bleccin/vprofiledb; bleccin/vprofileapp
 2. I opened up VScode to build a multi-staged Dockerfile for Maven and Tomcat and this will be the App Image Dockerfile.
+3. I built a Dockerfile for MYSQL Database and this will be the DB Image Dockerfile.
 
 
 
