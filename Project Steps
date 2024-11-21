@@ -47,5 +47,8 @@ SETTING UP DOCKERFILES:
 4. I built a Docker file for nginx and that will be the Web Dockerfile Image.
 5. I will use the official Docker image for Memcached and Rabbitmq because there is no extra configuration necessary.
 
+WRITE DOCKER COMPOSE TO BUILD AND TEST THE IMAGES:
+1. I built a docker-compose.yml file to build all the necessary images.  
+
 
 
