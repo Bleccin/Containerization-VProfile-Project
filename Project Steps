@@ -44,6 +44,8 @@ SETTING UP DOCKERFILES:
     bleccin/vprofileweb; bleccin/vprofiledb; bleccin/vprofileapp
 2. I opened up VScode to build a multi-staged Dockerfile for Maven and Tomcat and this will be the App Image Dockerfile.
 3. I built a Dockerfile for MYSQL Database and this will be the DB Image Dockerfile.
+4. I built a Docker file for nginx and that will be the Web Dockerfile Image.
+5. I will use the official Docker image for Memcached and Rabbitmq because there is no extra configuration necessary.
 
 
 
