@@ -55,6 +55,12 @@ WRITE DOCKER COMPOSE TO BUILD AND TEST THE IMAGES:
    - docker images
 4. I ran the docker compose using:
    - docker compose up -d 
+5. I hosted the Images in my DockerHub account by using below prompts:
+   - docker login
+   - docker push bleccin/vprofileapp 
+   - docker push bleccin/vprofiledb 
+   - docker push bleccin/vprofileweb 
+
 
 
 
